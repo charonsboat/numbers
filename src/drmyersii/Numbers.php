@@ -1,6 +1,5 @@
-<?php
+<?php namespace drmyersii;
 
-namespace drmyersii;
 
 class Numbers
 {
