@@ -11,6 +11,6 @@ class Numbers
 
 	public function GetNumber()
 	{
-		return 777;
+		return 778;
 	}
 }
