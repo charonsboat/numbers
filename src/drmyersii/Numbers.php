@@ -7,6 +7,11 @@ class Numbers
 	private $hundreds;
 	private $thousands;
 
+	public static function Numbers()
+	{
+		
+	}
+
 	public function __construct()
 	{
 		$this->ones = array(

@@ -3,8 +3,14 @@
 
 class NumberSegment
 {
-	public function __construct($number)
+	/**
+	 * This will turn a regular number segment into the appropriate NumberSegment 
+	 * type.
+	 *
+	 * @param $segment (int) || (string)
+	 */
+	public function __construct($segment)
 	{
-		
+
 	}
 }

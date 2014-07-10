@@ -14,6 +14,11 @@ class NumberW
 	private $number;
 
 	/**
+	 * @var $int_max (GMP)
+	 */
+	private $int_max;
+
+	/**
 	 * @var $reference (int) || (string)
 	 */
 	private $reference;
@@ -25,17 +30,11 @@ class NumberW
 	 * @param $number (int) || (string)
 	 * @param $base (int)
 	 */
-	public function __construct($number, $base)
+	public function __construct($number, $base = 10)
 	{
-		if (isset($base) && is_int($base))
-		{
-			$this->base = $base;
-		}
-		else
-		{
-			$this->base = 10; // Default the number to base 10
-		}
-
+		$this->reference = $number;
+		$this->base = intval($base);
+		$this->int_max = gmp_init(PHP_INT_MAX, $this->base);
 		$this->number = gmp_init($number, $this->base);
 	}
 
@@ -72,6 +71,25 @@ class NumberW
 	 */
 	public function GetValue()
 	{
+		$comparison = gmp_cmp($this->number, $this->int_max);
 
+		if ($comparison > 0)
+		{
+			return gmp_strval($this->number);
+		}
+		else
+		{
+			return gmp_intval($this->number);
+		}
+	}
+
+	/**
+	 * This will return the actual (GMP) number for use outside of this class.
+	 *
+	 * @return (GMP)
+	 */
+	public function GetNumber()
+	{
+		return $this->number;
 	}
 }
