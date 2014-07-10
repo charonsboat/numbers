@@ -7,7 +7,7 @@ class NumberSegmentFactory
 {
 	public static function GenerateNumbers()
 	{
-
+		
 	}
 
 	public static function MakeNumber($number)
