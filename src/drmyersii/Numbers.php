@@ -7,11 +7,6 @@ class Numbers
 	private $hundreds;
 	private $thousands;
 
-	public static function Numbers()
-	{
-		
-	}
-
 	public function __construct()
 	{
 		$this->ones = array(
@@ -74,25 +69,43 @@ class Numbers
 		);
 	}
 
-	public function GenerateWords($number)
+	public function Words($number)
 	{
 		if ($number <= 0)
 		{
-			return $this->ones[0];
+			return $this->MakeResult($number, $this->ones[0]);
 		}
 		else
 		{
 			$chunks = $this->SplitNumber($number);
 			$words = $this->MakeWords($chunks);
 
-			return $words;
+			return $this->MakeResult($number, $words);
 		}
 	}
 
-	public function MakeWords($chunks)
+	private function MakeResult($number, $words)
+	{
+		$result = array();
+
+		$result['number'] = $number;
+		$result['words'] = $words;
+
+		return $result;
+	}
+
+	/**
+	 * Takes an array of number chunks in string form and generates the 
+	 * corresponding word forms of those chunks. It then reorganizes the 
+	 * chunks into the correct order.
+	 *
+	 * @param $chunks array[string]
+	 * @return string
+	 */
+	private function MakeWords($chunks)
 	{
 		$words = array();
-		$index = -1;
+		$index = 0;
 
 		foreach ($chunks as $chunk)
 		{
@@ -100,7 +113,7 @@ class Numbers
 			$ten = 		isset($chunk{1}) ? intval($chunk{1}) : null;
 			$hundred = 	isset($chunk{2}) ? intval($chunk{2}) : null;
 
-			if ($index >= 0)
+			if ($index > 0)
 			{
 				$words[] = $this->thousands[$index];
 			}
@@ -151,7 +164,7 @@ class Numbers
 		return implode(' ', $words);
 	}
 
-	public function SplitNumber($number)
+	private function SplitNumber($number)
 	{
 		$reversedNumberAsString = strrev(strval($number));
 		$chunks = str_split($reversedNumberAsString, 3);
