@@ -10,8 +10,8 @@ class NumberSegmentFactory
 	 * This will split the number into segments and then convert those segments
 	 * into the appropriate type.
 	 *
-	 * @param $number (NumberW)
-	 * @return (array[NumberSegment])
+	 * @param $number NumberW
+	 * @return NumberSegment[]
 	 */
 	public static function MakeSegments($number)
 	{
@@ -23,8 +23,8 @@ class NumberSegmentFactory
 	/**
 	 * This will split the number into chunks and then turn them each into NumberSegments.
 	 *
-	 * @param $number (NumberW)
-	 * @return (array[string])
+	 * @param $number NumberW
+	 * @return string[]
 	 */
 	public static function SplitIntoSegments($number)
 	{
@@ -54,8 +54,8 @@ class NumberSegmentFactory
 	 * This is the actual factory method that converts regular string segments into
 	 * the number segment types we need to work with.
 	 *
-	 * @param $segments (array[string])
-	 * @return (array[NumberSegment])
+	 * @param $segments string[]
+	 * @return NumberSegment[]
 	 */
 	public static function MakeNumberSegments($segments)
 	{

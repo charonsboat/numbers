@@ -4,31 +4,31 @@
 class NumberW
 {
 	/**
-	 * @var $base (int)
+	 * @var $base int
 	 */
 	private $base;
 
 	/**
-	 * @var $number (GMP)
+	 * @var $number GMP
 	 */
 	private $number;
 
 	/**
-	 * @var $int_max (GMP)
+	 * @var $int_max GMP
 	 */
 	private $int_max;
 
 	/**
-	 * @var $reference (int) || (string)
+	 * @var $reference string
 	 */
 	private $reference;
 
 	/**
-	 * This is the contructor for this class. It accepts two parameters. Only the 
-	 * first ($number) is required. 
+	 * This class accepts two parameters on construction. Only the
+	 * first ($number) is required.
 	 *
-	 * @param $number (int) || (string)
-	 * @param $base (int)
+	 * @param $number string
+	 * @param $base int
 	 */
 	public function __construct($number, $base = 10)
 	{
@@ -39,11 +39,11 @@ class NumberW
 	}
 
 	/**
-	 * This will return the actual integer value of the number. If it is too large, 
-	 * it will return the maximun integer value that php supports. Use for strict 
+	 * This will return the actual integer value of the number. If it is too large,
+	 * it will return the maximun integer value that php supports. Use for strict
 	 * results where an int is required only.
 	 *
-	 * @return (int)
+	 * @return int
 	 */
 	public function GetIntegerValue()
 	{
@@ -51,10 +51,10 @@ class NumberW
 	}
 
 	/**
-	 * This will return the string value of the number. It will always return a 
+	 * This will return the string value of the number. It will always return a
 	 * string, no matter how small the number is.
 	 *
-	 * @return (string)
+	 * @return string
 	 */
 	public function GetStringValue()
 	{
@@ -62,12 +62,12 @@ class NumberW
 	}
 
 	/**
-	 * This will return either the integer value of the number or the string value 
-	 * (if the integer value is too large). Use this when you prefer to receive 
-	 * an integer, but you also don't want the number to be rounded down to the 
+	 * This will return either the integer value of the number or the string value
+	 * (if the integer value is too large). Use this when you prefer to receive
+	 * an integer, but you also don't want the number to be rounded down to the
 	 * maximum integer size if it is too large.
 	 *
-	 * @return (int) || (string)
+	 * @return string || int
 	 */
 	public function GetValue()
 	{
@@ -84,9 +84,9 @@ class NumberW
 	}
 
 	/**
-	 * This will return the actual (GMP) number for use outside of this class.
+	 * This will return the actual GMP number for use outside of this class.
 	 *
-	 * @return (GMP)
+	 * @return GMP
 	 */
 	public function GetNumber()
 	{
