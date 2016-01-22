@@ -29,8 +29,8 @@ class NumberSegmentFactory
 	public static function SplitIntoSegments($number)
 	{
 		$number_str = $number->GetStringValue();
-		$segments = array();
-		$NumberSegments = array();
+		$segments = [];
+		$NumberSegments = [];
 
 		while (strlen($number_str) > 0)
 		{
@@ -59,7 +59,7 @@ class NumberSegmentFactory
 	 */
 	public static function MakeNumberSegments($segments)
 	{
-		$NumberSegments = array();
+		$NumberSegments = [];
 
 		foreach ($segments as $segment)
 		{
