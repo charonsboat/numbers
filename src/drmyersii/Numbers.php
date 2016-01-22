@@ -95,8 +95,8 @@ class Numbers
 	}
 
 	/**
-	 * Takes an array of number chunks in string form and generates the 
-	 * corresponding word forms of those chunks. It then reorganizes the 
+	 * Takes an array of number chunks in string form and generates the
+	 * corresponding word forms of those chunks. It then reorganizes the
 	 * chunks into the correct order.
 	 *
 	 * @param $chunks array[string]
@@ -115,7 +115,7 @@ class Numbers
 
 			if ($index > 0)
 			{
-				$words[] = $this->thousands[$index];
+				$words[] = $this->thousands[$index - 1];
 			}
 
 			if (!is_null($ten) && $ten > 1)

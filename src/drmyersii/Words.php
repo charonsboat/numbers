@@ -4,7 +4,7 @@
 class Words
 {
 	/**
-	 * This array houses all words for numbers 0 through 99. This is all we need 
+	 * This array houses all words for numbers 0 through 99. This is all we need
 	 * to build our number word stack.
 	 *
 	 * @var $words (array[string])
@@ -31,9 +31,9 @@ class Words
 		18 => array('eightteen'),
 		19 => array('nineteen'),
 		20 => array('twenty'),
-		21 => array('twenty'), 'one'),
-		22 => array('twenty'), 'two'),
-		23 => array('twenty'), 'three'),
+		21 => array('twenty', 'one'),
+		22 => array('twenty', 'two'),
+		23 => array('twenty', 'three'),
 		24 => array('twenty', 'four'),
 		25 => array('twenty', 'five'),
 		26 => array('twenty', 'six'),
@@ -113,7 +113,7 @@ class Words
 	);
 
 	/**
-	 * Pass in a number less than one hundred and it will return the corresponding 
+	 * Pass in a number less than one hundred and it will return the corresponding
 	 * word or array of words.
 	 *
 	 * @param $number (int) || (string)
