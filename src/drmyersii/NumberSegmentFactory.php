@@ -7,7 +7,7 @@ use drmyersii\NumberW;
 class NumberSegmentFactory
 {
 	/**
-	 * This will split the number into segments and then convert those segments 
+	 * This will split the number into segments and then convert those segments
 	 * into the appropriate type.
 	 *
 	 * @param $number (NumberW)
@@ -15,9 +15,9 @@ class NumberSegmentFactory
 	 */
 	public static function MakeSegments($number)
 	{
-		$segments = self::SplitIntoSegments($number);
-		
-		return self::MakeNumberSegments($segments);
+		$segments = static::SplitIntoSegments($number);
+
+		return static::MakeNumberSegments($segments);
 	}
 
 	/**
@@ -51,7 +51,7 @@ class NumberSegmentFactory
 	}
 
 	/**
-	 * This is the actual factory method that converts regular string segments into 
+	 * This is the actual factory method that converts regular string segments into
 	 * the number segment types we need to work with.
 	 *
 	 * @param $segments (array[string])
