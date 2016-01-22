@@ -101,9 +101,7 @@
         "ninety-eight",
         "ninety-nine"
     ],
-    "x00": [
-        "hundred"
-    ],
+    "x00": "hundred",
     "x000": [
         "thousand",
         "million",
